@@ -13,27 +13,22 @@ const { send, call } = createRtcConnection({
 	onError: handleError,
 });
 
-function handleMessage(data: string) {
-	chat.appendMessage(data);
-}
+video.onCallClick = handleCallClick;
+chat.onSend = send;
 
 function handleConnectionStatusChange(status: RTCIceConnectionState) {
 	if (status === 'connected') connectionStatus.setAttribute('status', 'connected');
+}
+
+function handleMessage(data: string) {
+	chat.appendMessage(data);
 }
 
 async function handleCall(track: MediaStreamTrack) {
 	video.addTrack(track);
 }
 
-async function getStream() {
-	return navigator.mediaDevices.getUserMedia({ audio: false, video: true });
-}
-
-function handleError(error: unknown) {
-	console.error(error);
-}
-
-video.onCallClick = async () => {
+async function handleCallClick() {
 	try {
 		const stream = await getStream();
 
@@ -41,8 +36,12 @@ video.onCallClick = async () => {
 	} catch (error) {
 		handleError(error);
 	}
-};
+}
 
-chat.onSend = (text: string) => {
-	send(text);
-};
+function handleError(error: unknown) {
+	console.error(error);
+}
+
+async function getStream() {
+	return navigator.mediaDevices.getUserMedia({ audio: false, video: true });
+}
