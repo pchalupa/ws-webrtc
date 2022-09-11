@@ -1,0 +1,17 @@
+@import url("sanitize.css");
+@import url("./props.css");
+
+html {
+	block-size: 100%;
+	inline-size: 100%;
+  }
+
+body {
+	min-block-size: 100%;
+	min-inline-size: 100%;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;;
+	font-size: 1em;
+	font-weight: 400;
+	color: var(--color-text-primary);
+	background-color: var(--color-surface-primary)
+}

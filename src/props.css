@@ -1,0 +1,38 @@
+:root {
+	/* color */
+	--color-white: hsl(0deg 0% 100%);
+	--color-gray: hsl(218deg 12% 87%);
+	--color-black: hsl(0deg 0% 0%);
+	--color-primary: hsl(210deg 17% 24%);
+	--color-secondary: hsl(210deg 17% 24%);
+	--color-success: hsl(154deg 72% 48%);
+	--color-danger: hsl(340deg 100% 63%);
+	--color-warning: hsl(340deg 100% 63%);;
+
+	/* color surface */
+	--color-surface-primary: hsl(228, 8%, 12%);
+	--color-surface-secondary: var(--color-white);
+
+	/* font size */
+	--font-size-heading-larger: 45px;
+	--font-size-heading-large: 28px;
+	--font-size-heading: 22px;
+	--font-size-heading-small: 18px;
+	--font-size-subheading: 14px;
+	--font-size-text-large: 18px;
+	--font-size-text: 16px;
+	--font-size-text-small: 13px;
+	--font-size-button: 12px;
+	--font-size-button-large: 14px;
+
+	/* radius */
+	--radius-primary: 0.5rem;
+
+	/* transition */
+	--transition-hover: color 250ms ease-in-out-quart, background-color 250ms ease-in-out-quart, fill 250ms ease-in-out-quart, filter 250ms ease-in-out-quart;
+	--transition-reval: 500ms ease-out-quart;
+
+	/* space */
+	--space-large: 0.75rem;
+	--space-small: 0.5rem;
+}
