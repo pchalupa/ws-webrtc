@@ -1,13 +1,10 @@
 :root {
 	/* color */
-	--color-white: hsl(0deg 0% 100%);
-	--color-neutral: hsl(218deg 12% 87%);
-	--color-black: hsl(0deg 0% 0%);
 	--color-primary: rgb(212, 233, 255);
 	--color-secondary: hsl(210deg 17% 24%);
 	--color-success: hsl(154deg 72% 48%);
+	--color-warning: rgb(255, 195, 66);;
 	--color-danger: hsl(340deg 100% 63%);
-	--color-warning: hsl(340deg 100% 63%);;
 
 	/* surface */
 	--color-surface: hsl(228, 8%, 12%);

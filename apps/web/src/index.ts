@@ -17,7 +17,7 @@ video.onCallClick = handleCallClick;
 chat.onSend = send;
 
 function handleConnectionStatusChange(status: RTCIceConnectionState) {
-	if (status === 'connected') connectionStatus.setAttribute('status', 'connected');
+	connectionStatus.setStatus(status);
 }
 
 function handleMessage(data: string) {
