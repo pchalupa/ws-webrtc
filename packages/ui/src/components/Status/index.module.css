@@ -1,14 +1,15 @@
 .container {
-	--color: var(--color-danger);
+	--color: var(--color-danger, black);
 
 	display: inline-flex;
 	align-content: center;
 	align-items: center;
 	gap: var(--space-small);
 	color: var(--color);
-	padding: 0 0.3rem;
-	border: 0.1rem solid var(--color);
-	border-radius: var(--radius-primary);
+	padding: 0 0.5rem;
+	border: var(--border-line-width) solid var(--color);
+	border-radius: var(--border-radius);
+	text-transform: uppercase;
 }
 
 .container::before {
@@ -20,4 +21,9 @@
 	height: var(--size);
 	border-radius: calc(var(--size) / 2);
 	background-color: var(--color);
+	box-shadow: 0 0 7px 3px var(--color);
+}
+
+.container[status='connected'] {
+	--color: var(--color-success)
 }

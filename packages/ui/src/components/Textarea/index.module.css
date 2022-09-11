@@ -1,0 +1,9 @@
+.container {
+	border: var(--border-line-width) solid var(--color-primary);
+	background-color: transparent;
+	resize: none;
+	cursor: default;
+	color: var(--color-primary);
+	border-radius: var(--border-radius);
+	padding: var(--space-medium);
+}

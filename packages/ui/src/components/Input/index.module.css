@@ -1,0 +1,15 @@
+.container {
+	border: var(--border-line-width) solid var(--color-primary);
+	border-radius: var(--border-radius);
+	background-color: transparent;
+	color: var(--color-primary);
+	padding: 0.2rem 0.5rem;
+}
+
+.container[type="submit"] {
+	cursor: pointer;
+}
+
+.container[type="submit"]:active {
+	opacity: 0.7;
+}

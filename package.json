@@ -1,24 +1,18 @@
 {
-	"name": "ws-webrtc",
-	"version": "1.0.0",
-	"main": "index.js",
+	"workspaces": [
+		"packages/*",
+		"apps/*"
+	],
+	"private": true,
 	"license": "MIT",
 	"scripts": {
-		"dev": "yarn concurrently \"vite\" \"ts-node src/signaling.ts\"  ",
+		"dev": "turbo run dev --parallel",
 		"build": "vite build"
 	},
-	"dependencies": {
-		"sanitize.css": "^13.0.0",
-		"ws": "^8.8.1"
-	},
 	"devDependencies": {
-		"@types/node": "^18.7.14",
-		"@types/ws": "^8.5.3",
-		"concurrently": "^7.3.0",
 		"eslint": "^8.23.0",
 		"prettier": "^2.7.1",
-		"ts-node": "^10.9.1",
-		"typescript": "^4.8.2",
-		"vite": "^3.0.9"
+		"turbo": "^1.4.6",
+		"typescript": "^4.8.2"
 	}
 }

@@ -1,0 +1,28 @@
+:root {
+	/* color */
+	--color-white: hsl(0deg 0% 100%);
+	--color-neutral: hsl(218deg 12% 87%);
+	--color-black: hsl(0deg 0% 0%);
+	--color-primary: rgb(212, 233, 255);
+	--color-secondary: hsl(210deg 17% 24%);
+	--color-success: hsl(154deg 72% 48%);
+	--color-danger: hsl(340deg 100% 63%);
+	--color-warning: hsl(340deg 100% 63%);;
+
+	/* surface */
+	--color-surface: hsl(228, 8%, 12%);
+
+	/* border */
+	--border-line-width: 0.1rem;
+	--border-radius: 0.5rem;
+
+	/* space */
+	--space-large: 1rem;
+	--space-medium: 0.75rem;
+	--space-small: 0.5rem;
+
+	/* font */
+	--font-size-large: 2rem;
+	--font-size-medium: 1.5rem;
+	--font-size-normal: 1rem;
+}

@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"target": "ES6",
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"jsx": "react-jsx",
+		"module": "ESNext",
+		"types": ["vite/client"],
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"allowJs": false,
+		"sourceMap": true,
+		"removeComments": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true
+	}
+}

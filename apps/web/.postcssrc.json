@@ -1,0 +1,10 @@
+{
+	"plugins": {
+		"cssnano": { "preset": "default" },
+		"postcss-preset-env": {
+			"features": {
+				"nesting-rules": true
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+.container {
+	--color: var(--color-primary);
+
+	background-color: transparent;
+	color: var(--color);
+	cursor: pointer;
+	border: var(--border-line-width) solid var(--color);
+	border-radius: var(--border-radius);
+	padding: 0.1rem 0.3rem;
+}
+
+.container:active {
+	opacity: 0.7;
+}

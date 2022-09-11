@@ -1,0 +1,17 @@
+{
+	"name": "signaling-server",
+	"version": "1.0.0",
+	"main": "src/index.ts",
+	"license": "MIT",
+	"scripts": {
+		"dev": "ts-node-dev src/index.ts"
+	},
+	"dependencies": {
+		"ws": "^8.8.1"
+	},
+	"devDependencies": {
+		"@types/node": "^18.7.16",
+		"@types/ws": "^8.5.3",
+		"ts-node-dev": "^2.0.0"
+	}
+}
