@@ -3,6 +3,9 @@
 	"version": "1.0.0",
 	"main": "src/index.ts",
 	"license": "MIT",
+	"scripts": {
+		"lint": "eslint . --ext ts --ext tsx"
+	},
 	"dependencies": {
 		"types": "*"
 	}

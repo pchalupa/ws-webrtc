@@ -14,14 +14,17 @@ const { send, call } = createRtcConnection({
 });
 
 video.onCallClick = handleCallClick;
-chat.onSend = send;
+chat.onSend = (text: string) => {
+	send(text);
+	chat.appendMessage(`Me: ${text}`);
+};
 
 function handleConnectionStatusChange(status: RTCIceConnectionState) {
 	connectionStatus.setStatus(status);
 }
 
-function handleMessage(data: string) {
-	chat.appendMessage(data);
+function handleMessage(text: string) {
+	chat.appendMessage(`Friend: ${text}`);
 }
 
 async function handleCall(track: MediaStreamTrack) {

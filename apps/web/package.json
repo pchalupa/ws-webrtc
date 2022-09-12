@@ -4,7 +4,8 @@
 	"main": "src/index.jt",
 	"license": "MIT",
 	"scripts": {
-		"dev": "vite"
+		"dev": "vite",
+		"lint": "eslint . --ext ts --ext tsx"
 	},
 	"dependencies": {
 		"postcss-preset-env": "^7.8.1",

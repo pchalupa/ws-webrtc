@@ -38,7 +38,7 @@ export class Chat extends HTMLElement {
 		input.type = 'text';
 		submit.type = 'submit';
 
-		submit.value = '🚀';
+		submit.value = 'send';
 
 		form.addEventListener('submit', (event) => {
 			event.preventDefault();

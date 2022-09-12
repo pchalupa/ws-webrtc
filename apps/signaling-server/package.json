@@ -4,7 +4,8 @@
 	"main": "src/index.ts",
 	"license": "MIT",
 	"scripts": {
-		"dev": "ts-node-dev src/index.ts"
+		"dev": "ts-node-dev src/index.ts",
+		"lint": "eslint . --ext ts --ext tsx"
 	},
 	"dependencies": {
 		"ws": "^8.8.1"
