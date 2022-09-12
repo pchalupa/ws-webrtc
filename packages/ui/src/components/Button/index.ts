@@ -1,9 +1,7 @@
 import styles from './index.module.css';
 
 export class Button extends HTMLButtonElement {
-	constructor() {
-		super();
-
+	connectedCallback() {
 		this.classList.add(styles.container);
 	}
 }

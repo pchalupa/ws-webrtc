@@ -6,8 +6,11 @@ export class Status extends HTMLElement {
 	constructor() {
 		super();
 
-		this.classList.add(styles.container);
 		this.innerText = 'disconnected';
+	}
+
+	connectedCallback() {
+		this.classList.add(styles.container);
 	}
 
 	setStatus(status: RTCIceConnectionState) {

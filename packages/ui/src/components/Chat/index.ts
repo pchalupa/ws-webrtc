@@ -10,7 +10,6 @@ export class Chat extends HTMLElement {
 	constructor() {
 		super();
 
-		this.classList.add(styles.container);
 		this.textarea = this.createTextarea();
 		this.form = this.createForm();
 	}
@@ -62,6 +61,7 @@ export class Chat extends HTMLElement {
 	}
 
 	connectedCallback() {
+		this.classList.add(styles.container);
 		this.render();
 	}
 

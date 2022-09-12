@@ -3,9 +3,7 @@ import styles from './index.module.css';
 export class Textarea extends HTMLTextAreaElement {
 	disabled = true;
 
-	constructor() {
-		super();
-
+	connectedCallback() {
 		this.classList.add(styles.container);
 	}
 

@@ -10,15 +10,9 @@ export class Video extends HTMLElement {
 	constructor() {
 		super();
 
-		this.classList.add(styles.container);
 		this.mediaStream = new MediaStream();
 		this.video = this.createVideo();
 		this.callButton = this.createCallButton();
-
-		this.mediaStream.addEventListener('addtrack', () => {
-			console.log('AaAS');
-			this.callButton.hidden = true;
-		});
 	}
 
 	private createVideo() {
@@ -52,6 +46,7 @@ export class Video extends HTMLElement {
 	}
 
 	connectedCallback() {
+		this.classList.add(styles.container);
 		this.render();
 	}
 
