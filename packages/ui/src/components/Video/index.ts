@@ -29,7 +29,7 @@ export class Video extends HTMLElement {
 		const button = new Button();
 
 		button.classList.add(styles.button);
-		button.innerText = 'call';
+		button.innerText = 'stream';
 		button.addEventListener('click', () => {
 			if (this.onCallClick) this.onCallClick();
 		});

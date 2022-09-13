@@ -1,7 +1,7 @@
 import styles from './index.module.css';
 
 export class Status extends HTMLElement {
-	innerText: RTCIceConnectionState;
+	innerText: RTCPeerConnectionState;
 
 	constructor() {
 		super();
@@ -13,7 +13,7 @@ export class Status extends HTMLElement {
 		this.classList.add(styles.container);
 	}
 
-	setStatus(status: RTCIceConnectionState) {
+	setStatus(status: RTCPeerConnectionState) {
 		this.innerText = status;
 		this.setAttribute('status', status);
 	}

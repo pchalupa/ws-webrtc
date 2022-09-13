@@ -1,55 +1,59 @@
 import 'ui';
 import type { Status, Video, Chat } from 'ui';
-import { createRtcConnection } from './rtcConnection';
+import { createRtcConnection } from './createRtcConnection';
 
 document.addEventListener('DOMContentLoaded', () => {
 	const connectionStatus = document.getElementById('status') as Status;
 	const video = document.getElementById('video') as Video;
 	const chat = document.getElementById('chat') as Chat;
 
-	const { send, call } = createRtcConnection({
+	const { send, stream } = createRtcConnection({
 		onConnectionStatusChange: handleConnectionStatusChange,
 		onMessage: handleMessage,
 		onCall: handleCall,
 		onError: handleError,
 	});
 
-	video.onCallClick = handleCallClick;
-	chat.onSend = (text: string) => {
-		send(text);
-		chat.appendMessage(`Me: ${text}`);
-	};
+	video.onCallClick = handleStreamClick;
+	chat.onSend = handleSend;
 
-	function handleConnectionStatusChange(status: RTCIceConnectionState) {
+	function handleConnectionStatusChange(status: RTCPeerConnectionState) {
 		connectionStatus.setStatus(status);
 	}
 
-	function handleMessage(text: string) {
-		chat.appendMessage(`Friend: ${text}`);
+	function handleMessage(message: string) {
+		appendMessage('Friend', message);
 	}
 
 	async function handleCall(track: MediaStreamTrack) {
 		video.addTrack(track);
 	}
 
-	async function handleCallClick() {
+	async function handleStreamClick() {
 		try {
-			const stream = await getStream();
-
-			call(stream);
+			stream(await getStream(false, true));
 		} catch (error) {
 			handleError(error);
 		}
+	}
+
+	function handleSend(message: string) {
+		send(message);
+		appendMessage('Me', message);
+	}
+
+	function appendMessage(sender: string, message: string) {
+		chat.appendMessage(`${sender}: ${message}`);
 	}
 
 	function handleError(error: unknown) {
 		console.error(error);
 	}
 
-	async function getStream() {
+	async function getStream(audio: boolean, video: boolean) {
 		return navigator.mediaDevices.getUserMedia({
-			audio: false,
-			video: true,
+			audio,
+			video,
 		});
 	}
 });

@@ -24,7 +24,7 @@
 	box-shadow: 0 0 7px 3px var(--color);
 }
 
-.container[status='checking'] {
+.container[status='connecting'] {
 	--color: var(--color-warning)
 }
 
