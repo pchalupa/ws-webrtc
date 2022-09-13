@@ -32,7 +32,7 @@ The RTCDataChannel interface represents a network channel which can be used for 
 | ---------------------------------------------------------------------------------------- | ------------------------------------ |
 | [message](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/message_event) | Fires when message has been received |
 
-## Tasks
+## Steps
 
 -   [ ] Connect to signaling
 -   [ ] Implement send to signaling function
