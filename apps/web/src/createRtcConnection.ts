@@ -23,8 +23,11 @@ export function createRtcConnection({
 	onError: (error: unknown) => void;
 }) {
 	let dataChannel = peerConnection.createDataChannel(crypto.randomUUID());
-	// TODO: check if open
-	const send = (data: string) => dataChannel.send(data);
+
+	const send = (data: string) => {
+		if (dataChannel.readyState === 'open') dataChannel.send(data);
+	};
+
 	const stream = async (stream: MediaStream) => {
 		const tracks = stream.getTracks();
 
@@ -41,10 +44,8 @@ export function createRtcConnection({
 		try {
 			const offer = await peerConnection.createOffer();
 
-			if (offer) {
-				await peerConnection.setLocalDescription(offer);
-				sendToSignaling({ id, sdp: offer });
-			}
+			await peerConnection.setLocalDescription(offer);
+			sendToSignaling({ id, sdp: offer });
 		} catch (error) {
 			handleError(error);
 		}
@@ -57,7 +58,13 @@ export function createRtcConnection({
 	});
 
 	peerConnection.addEventListener('datachannel', (event) => {
-		dataChannel = event.channel;
+		const { channel } = event;
+
+		channel.addEventListener('message', (event) =>
+			handleMessage(event.data)
+		);
+
+		dataChannel = channel;
 	});
 
 	peerConnection.addEventListener('track', (event) => {
@@ -71,7 +78,7 @@ export function createRtcConnection({
 	return { send, stream };
 }
 
-async function handleSignalingMessage(message: MessageEvent) {
+async function handleSignalingMessage(message: MessageEvent<string>) {
 	try {
 		const data: SignalingMessage = JSON.parse(message.data);
 
@@ -99,9 +106,9 @@ async function handleSignalingMessage(message: MessageEvent) {
 }
 
 function sendToSignaling(data: SignalingMessage) {
-	// TODO: is connected?
 	try {
-		signalingServer.send(JSON.stringify(data));
+		if (signalingServer.readyState === signalingServer.OPEN)
+			signalingServer.send(JSON.stringify(data));
 	} catch (error) {
 		throw error;
 	}
