@@ -8,8 +8,11 @@ STEPS:
 6. listen for ice candidate
 7. listen for negotiationneeded event
 8. handle signaling message
-9. implement send function
-10. implement call function
+9. handle data channel event
+10. implement send function
+11. listen for message event
+12. listen for track event
+13. implement call function
 */
 
 const iceServers = [{ urls: 'stun:stun.l.google.com:19302' }];
@@ -35,9 +38,9 @@ export function createRtcConnection({
 
 	const stream = async (stream: MediaStream) => {};
 
-	async function handleSignalingMessage(message: MessageEvent) {}
-
 	return { send, stream };
 }
+
+async function handleSignalingMessage(message: MessageEvent<string>) {}
 
 function sendToSignaling(data: SignalingMessage) {}
