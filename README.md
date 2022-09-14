@@ -11,7 +11,7 @@ Exchange real-time audio, video and data with one or more peers entirely in the 
 | STUN | "Session Traversal Utilities for NAT" is server which is used to get your device IP address                               |
 | TURN | "Traversal using Relay NAT" is server which is used as fallback when peer-to-peer connection fails                        |
 | SDP  | "Session Description Protocol" Contain info about the session connection such as the codec, media type, audio, video, etc |
-| ICE  | "Interactive Connectivity Establishment" helps clients coordinates discovery them publicly                                |
+| ICE  | "Interactive Connectivity Establishment" network path between peers                                                       |
 
 ## RTCPeerConnection
 
