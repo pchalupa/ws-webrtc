@@ -1,6 +1,17 @@
-# WebRTC
+# WebRTC – Cheat Sheet
+
+Exchange real-time audio, video and data with one or more peers entirely in the browser.
 
 > Imagine a world where your phone, TV, and computer could communicate on a common platform. Imagine it was easy to add video chat and peer-to-peer data sharing to your web app. That's the vision of WebRTC.
+
+## Abberations
+
+| Name | Description                                                                                                               |
+| ---- | ------------------------------------------------------------------------------------------------------------------------- |
+| STUN | "Session Traversal Utilities for NAT" is server which is used to get your device IP address                               |
+| TURN | "Traversal using Relay NAT" is server which is used as fallback when peer-to-peer connection fails                        |
+| SDP  | "Session Description Protocol" Contain info about the session connection such as the codec, media type, audio, video, etc |
+| ICE  | "Interactive Connectivity Establishment" helps clients coordinates discovery them publicly                                |
 
 ## RTCPeerConnection
 
@@ -24,29 +35,10 @@ The RTCPeerConnection interface represents a WebRTC connection between the local
 
 ## RTCDataChannel
 
-The RTCDataChannel interface represents a network channel which can be used for bidirectional peer-to-peer transfers of arbitrary data. Every data channel is associated with an RTCPeerConnection, and each peer connection can have up to a theoretical maximum of 65,534 data channels (the actual limit may vary from browser to browser).
+The RTCDataChannel interface represents a network channel that can be used for bidirectional peer-to-peer transfers of arbitrary data. Every data channel is associated with an RTCPeerConnection, and each peer connection can have up to a theoretical maximum of 65,534 data channels (the actual limit may vary from browser to browser).
 
 ### Events
 
-| name                                                                                     | description                          |
-| ---------------------------------------------------------------------------------------- | ------------------------------------ |
-| [message](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/message_event) | Fires when message has been received |
-
-## Steps
-
--   [ ] Connect to signaling
--   [ ] Implement send to signaling function
--   [ ] Create RTC peer connection instance
--   [ ] Connection state change listener
--   [ ] Define peer id
--   [ ] Listen for ICE candidates
--   [ ] Listen for negotiation needed
--   [ ] Handle signaling messages
--   [ ] Define RTC data channel
--   [ ] Implement send function
--   [ ] Listen for tracks event
--   [ ] Implement stream function
-
-## TODO
-
--   [ ] shortcuts
+| name                                                                                     | description                            |
+| ---------------------------------------------------------------------------------------- | -------------------------------------- |
+| [message](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/message_event) | Fires when a message has been received |
