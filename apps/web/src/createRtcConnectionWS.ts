@@ -1,16 +1,18 @@
-const iceServers = [{ urls: 'stun:stun.l.google.com:19302' }];
-
 /*
-1. connect to signaling + send function
+STEPS:
+1. connect to signaling, implement send function
 2. create peer connection instance
-3. connection state change listener
-4. peer id
-5. ice candidate
-6. negotiationneeded listener
-7. handle signaling message
-8. dataChannel
-9. tracks
+3. crate data channel
+4. connection state change listener
+5. define peer id
+6. listen for ice candidate
+7. listen for negotiationneeded event
+8. handle signaling message
+9. implement send function
+10. implement call function
 */
+
+const iceServers = [{ urls: 'stun:stun.l.google.com:19302' }];
 
 interface SignalingMessage {
 	id: string;
