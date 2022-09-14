@@ -26,12 +26,12 @@ interface SignalingMessage {
 export function createRtcConnection({
 	onConnectionStatusChange: handleConnectionStatusChange,
 	onMessage: handleMessage,
-	onCall: handleCall,
+	onTrack: handleTrack,
 	onError: handleError,
 }: {
 	onConnectionStatusChange: (status: RTCPeerConnectionState) => void;
 	onMessage: (data: string) => void;
-	onCall: (track: MediaStreamTrack) => void;
+	onTrack: (track: MediaStreamTrack) => void;
 	onError: (error: unknown) => void;
 }) {
 	const send = (data: string) => {};
