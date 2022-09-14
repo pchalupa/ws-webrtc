@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const { send, stream } = createRtcConnection({
 		onConnectionStatusChange: handleConnectionStatusChange,
 		onMessage: handleMessage,
-		onCall: handleCall,
+		onTrack: handleTrack,
 		onError: handleError,
 	});
 
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		appendMessage('Friend', message);
 	}
 
-	async function handleCall(track: MediaStreamTrack) {
+	async function handleTrack(track: MediaStreamTrack) {
 		video.addTrack(track);
 	}
 

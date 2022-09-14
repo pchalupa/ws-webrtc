@@ -14,12 +14,12 @@ interface SignalingMessage {
 export function createRtcConnection({
 	onConnectionStatusChange: handleConnectionStatusChange,
 	onMessage: handleMessage,
-	onCall: handleCall,
+	onTrack: handleTrack,
 	onError: handleError,
 }: {
 	onConnectionStatusChange: (status: RTCPeerConnectionState) => void;
 	onMessage: (data: string) => void;
-	onCall: (track: MediaStreamTrack) => void;
+	onTrack: (track: MediaStreamTrack) => void;
 	onError: (error: unknown) => void;
 }) {
 	let dataChannel = peerConnection.createDataChannel(crypto.randomUUID());
@@ -68,7 +68,7 @@ export function createRtcConnection({
 	});
 
 	peerConnection.addEventListener('track', (event) => {
-		handleCall(event.track);
+		handleTrack(event.track);
 	});
 
 	dataChannel.addEventListener('message', (event) =>
